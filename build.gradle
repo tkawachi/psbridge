@@ -1,0 +1,44 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.2'
+    }
+}
+
+
+group 'com.github.tkawachi'
+version '0.0.1-SNAPSHOT'
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-ssm', version: '1.11.286'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+shadowJar {
+    baseName = rootProject.name
+    manifest {
+        attributes(
+                'Premain-Class': 'com.github.tkawachi.psbridge.PSBridge',
+                'Implementation-Title': "PSBridge",
+                'Implementation-Version': rootProject.version
+        )
+    }
+    relocate('com', 'com.github.tkawachi.psbridge.com') {
+        exclude 'com.github.tkawachi.psbridge.*'
+    }
+    relocate('org', 'com.github.tkawachi.psbridge.org')
+    relocate('software', 'com.github.tkawachi.psbridge.software')
+}
