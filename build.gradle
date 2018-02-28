@@ -36,9 +36,9 @@ shadowJar {
                 'Implementation-Version': rootProject.version
         )
     }
-    relocate('com', 'com.github.tkawachi.psbridge.com') {
+    relocate('com', 'com.github.tkawachi.psbridge.shaded.com') {
         exclude 'com.github.tkawachi.psbridge.*'
     }
-    relocate('org', 'com.github.tkawachi.psbridge.org')
-    relocate('software', 'com.github.tkawachi.psbridge.software')
+    relocate('org', 'com.github.tkawachi.psbridge.shaded.org')
+    relocate('software', 'com.github.tkawachi.psbridge.shaded.software')
 }
