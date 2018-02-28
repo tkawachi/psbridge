@@ -38,14 +38,14 @@ public class PSBridge {
                         break;
                     case "StringList":
                         // StringList is loaded in typesafe config compatible manner.
-                        // For example, key=a,b,c is converted to key.0=a key.1=b key.2=c.
+                        // For example, key=a,b,c is loaded as key.0=a key.1=b key.2=c.
                         final String[] values = param.getValue().split(",");
                         int i = 0;
                         // Set an each list element as a separated property.
                         for (; i < values.length; ++i) {
                             System.setProperty(getIndexedKey(key, i), values[i]);
                         }
-                        // Remove properties at additional indices if exists.
+                        // Remove properties at additional indices if exist.
                         for (; System.getProperty(getIndexedKey(key, i)) != null; ++i) {
                             System.clearProperty(getIndexedKey(key, i));
                         }
