@@ -35,7 +35,6 @@ public class PSBridge {
                     case "SecureString":
                         final String value = param.getValue();
                         System.setProperty(key, value);
-                        System.out.println("" + key + "=" + value);
                         break;
                     case "StringList":
                         // StringList is loaded in typesafe config compatible manner.
