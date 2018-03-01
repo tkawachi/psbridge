@@ -28,7 +28,7 @@ dependencies {
 }
 
 shadowJar {
-    baseName = rootProject.name
+    archiveName = "${rootProject.name}.jar"
     manifest {
         attributes(
                 'Premain-Class': 'com.github.tkawachi.psbridge.PSBridge',
