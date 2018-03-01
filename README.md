@@ -4,7 +4,7 @@ Loading [AWS System Manager Parameter Store](https://docs.aws.amazon.com/systems
 
 ## Usage
 
-1. Download psbridge.jar from the releases page.
+1. Download psbridge.jar from [the releases page](https://github.com/tkawachi/psbridge/releases).
 1. Add `-javaagent:path/to/psbridge.jar=/path1,/path2` to java argument, where `/path1` and `/path2` are paths of parameter store.
 PSBridge loads parameters under specified paths into system properties in specified order.
 
