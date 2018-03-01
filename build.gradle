@@ -10,7 +10,7 @@ buildscript {
 
 
 group 'com.github.tkawachi'
-version '0.0.1'
+version '0.0.2-SNAPSHOT'
 
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'java'
